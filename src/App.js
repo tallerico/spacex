@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Background from './components/background'
+import MainHeader from './components/MainHeader'
 import './App.css'
 
 class App extends Component {
 	render() {
-		return <Background />
+		return <MainHeader />
 	}
 }
 
