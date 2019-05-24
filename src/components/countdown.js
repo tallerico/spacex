@@ -5,14 +5,19 @@ import backgroundImg from '../img/space.jpg';
 import 'moment-timezone';
 const moment = require('moment');
 
-const TimeContainer = styled.div`
+const Container = styled.div`
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	font-family: 'Major Mono Display', monospace;
-	font-size: 0.8em;
+	flex-direction: column;
 	padding: 2em;
 	background-image: url(${backgroundImg});
+	font-family: 'Press Start 2P', cursive;
+	color: white;
+	font-size: 0.9em;
+	justify-content: center;
+	text-align: center;
+	& span {
+		margin-bottom: 20px;
+	}
 	@media (min-width: 600px) {
 		font-size: 1.5em;
 	}
@@ -21,14 +26,21 @@ const TimeContainer = styled.div`
 	}
 `;
 
+const TimeContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	color: black;
+`;
+
 const DigitContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	border-radius: 5px;
 	background-color: #fff;
-	-webkit-box-shadow: 0px 0px 42px -13px rgba(255, 255, 255, 1);
-	-moz-box-shadow: 0px 0px 42px -13px rgba(255, 255, 255, 1);
-	box-shadow: 0px 0px 42px -13px rgba(255, 255, 255, 1);
+	-webkit-box-shadow: 0px 0px 42px -13px rgba(0, 129, 235, 1);
+	-moz-box-shadow: 0px 0px 42px -13px rgba(0, 129, 235, 1);
+	box-shadow: 0px 0px 42px -13px rgba(0, 129, 235, 1);
 	padding: 0.5em;
 	margin-right: 10px;
 	&:last-child {
@@ -68,7 +80,8 @@ const countdown = props => {
 	});
 
 	return (
-		<div>
+		<Container>
+			<span>Time To Next SpaceX Launch</span>
 			<TimeContainer>
 				<DigitContainer>
 					<div>Days</div>
@@ -95,7 +108,7 @@ const countdown = props => {
 					{seconds < 10 ? `0${seconds}` : `${seconds}`}
 				</h1> */}
 			</TimeContainer>
-		</div>
+		</Container>
 	);
 };
 
