@@ -1,17 +1,22 @@
-import React, { Component } from 'react'
-import MainHeader from './components/MainHeader'
-import Navigation from './components/Navigation'
-import './App.css'
+import React, { Component } from 'react';
+import MainHeader from './components/MainHeader';
+import Navigation from './components/Navigation';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Countdown from './components/countdown';
+import './App.css';
 
 class App extends Component {
 	render() {
 		return (
 			<div>
-				<Navigation />
-				<MainHeader />
+				<CssBaseline>
+					<Navigation />
+
+					<Countdown />
+				</CssBaseline>
 			</div>
-		)
+		);
 	}
 }
 
-export default App
+export default App;
