@@ -12,6 +12,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 const styles = {
 	root: {
 		flexGrow: 1,
+		background: '#666666',
 	},
 	grow: {
 		flexGrow: 1,
@@ -25,19 +26,17 @@ const styles = {
 function ButtonAppBar(props) {
 	const { classes } = props
 	return (
-		<div className={classes.root}>
-			<AppBar position="static">
-				<Toolbar>
-					<IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-						<MenuIcon />
-					</IconButton>
-					<Typography variant="h6" color="inherit" className={classes.grow}>
-						News
-					</Typography>
-					<Button color="inherit">Login</Button>
-				</Toolbar>
-			</AppBar>
-		</div>
+		<AppBar classes={{ root: classes.root }} position="static">
+			<Toolbar>
+				<IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+					<MenuIcon />
+				</IconButton>
+				<Typography variant="h6" color="inherit" className={classes.grow}>
+					Far Galaxy
+				</Typography>
+				<Button color="inherit">Login</Button>
+			</Toolbar>
+		</AppBar>
 	)
 }
 
