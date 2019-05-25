@@ -66,17 +66,23 @@ const countdown = props => {
 	}
 
 	useEffect(() => {
-		axios.get('https://api.spacexdata.com/v3/launches/next').then(function(response) {
-			//getting current date and time
-			const currentDate = moment().format();
-			//setting launch time to the moment object
-			const launchDate = moment.utc(response.data.launch_date_local);
-			getDiff(currentDate, launchDate);
-			setInterval(() => {
-				const newCurrDate = moment().format();
-				getDiff(newCurrDate, launchDate);
-			}, 1000);
-		});
+		//getting current date and time
+		const currentDate = moment().format();
+		let launchDate;
+
+		axios
+			.get('http://localhost:5000/timetolaunch')
+			.then(function(response) {
+				//setting launch time to the moment object
+				launchDate = moment.utc(response.data.launch_date_local);
+				getDiff(currentDate, launchDate);
+			})
+			.then(() => {
+				setInterval(() => {
+					const newCurrDate = moment().format();
+					getDiff(newCurrDate, launchDate);
+				}, 1000);
+			});
 	});
 
 	return (
