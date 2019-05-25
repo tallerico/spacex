@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Dexie from 'dexie';
 import MainHeader from './components/MainHeader';
 import Navigation from './components/Navigation';
 import CssBaseline from '@material-ui/core/CssBaseline';
