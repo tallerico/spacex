@@ -17,11 +17,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/timetolaunch', function(req, res, next) {
-	axios
-		.get('https://api.spacexdata.com/v3/launches/next')
-		.catch(next)
-		.then(response => {
-			console.log(response);
-			res.send(response.data);
-		});
+	axios.get('https://api.spacexdata.com/v3/launches/next').then(response => {
+		console.log(response);
+		res.send(response.data);
+		res.end;
+	});
 });
