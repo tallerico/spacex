@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Dexie from 'dexie';
-import MainHeader from './components/MainHeader';
-import Navigation from './components/Navigation';
+import Home from './components/Home';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Countdown from './components/countdown';
 import './App.css';
 
 class App extends Component {
 	render() {
 		return (
-			<div>
-				<CssBaseline>
-					<Navigation />
-
-					<Countdown />
-				</CssBaseline>
-			</div>
+			<Router>
+				<div>
+					<CssBaseline>
+						<Route exact path="/" component={Home} />
+					</CssBaseline>
+				</div>
+			</Router>
 		);
 	}
 }
