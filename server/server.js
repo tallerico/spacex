@@ -23,3 +23,7 @@ app.get('/timetolaunch', function(req, res, next) {
 		res.end;
 	});
 });
+
+app.get('/*', (req, res) => {
+	res.sendFile(path.join(__dirname, '/client/build/index.html'));
+});
