@@ -1,8 +1,8 @@
 import React from 'react';
-import Countdown from './countdown';
+import NextLaunch from './NextLaunch';
 
 function home() {
-	return <Countdown />;
+	return <NextLaunch />;
 }
 
 export default home;
