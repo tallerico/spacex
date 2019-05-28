@@ -1,22 +1,33 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Dexie from 'dexie';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
 import Home from './components/Home';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import './App.css';
 
-class App extends Component {
-	render() {
-		return (
-			<Router>
-				<div>
-					<CssBaseline>
-						<Route exact path="/" component={Home} />
-					</CssBaseline>
-				</div>
-			</Router>
-		);
+const GlobalStyles = createGlobalStyle`
+  body {
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+    font-family: 'Roboto Mono', monospace;
 	}
+	
+	h1 {
+		font-size: 1rem;
+		@media (min-width: 400px) {
+					font-size: 1.3rem;
+		}
+		@media (min-width: 600px) {
+			font-size: 1.6rem;
+		}
+	}
+`;
+
+function App() {
+	return (
+		<Router>
+			<GlobalStyles />
+			<Route exact path="/" component={Home} />
+		</Router>
+	);
 }
 
 export default App;
