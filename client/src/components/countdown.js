@@ -1,56 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Loader from 'react-loader-spinner';
 import styled from 'styled-components';
+import DigitContainer from './count_components/DigitContainer';
 import axios from 'axios';
 import 'moment-timezone';
 import ButtonDark from './ButtonDark';
 const moment = require('moment');
 
-const Container = styled.div`
+const Wrapper = styled.div`
 	display: flex;
-	flex-direction: column;
-	padding: 2em;
-	background-color: #050404
-	font-family: 'Roboto', sans-serif;
-	color: white;
-	font-size: 0.9em;
 	justify-content: center;
-	text-align: center;
-	& span {
-		margin-bottom: 20px;
-	}
-	@media (min-width: 600px) {
-		font-size: 1.5em;
-	}
-	@media (min-width: 940px) {
-		font-size: 2em;
-		
-	}
-`;
-
-const TimeContainer = styled.div`
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	margin-bottom: 30px;
-`;
-
-const DigitContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-	border-radius: 5px;
-	border: 2px solid #605c5e;
-	padding: 0.5em;
-	margin-right: 10px;
-	&:last-child {
-		margin: 0;
-	}
-`;
-
-const ParagraphConatiner = styled.div`
-	border-top: 2px solid #f1b102;
-	text-align: left;
-	padding: 2em;
 `;
 
 //loader for detail info
@@ -92,28 +51,15 @@ const countdown = props => {
 	}, []);
 
 	return (
-		<Container>
-			<span>Time To Next SpaceX Launch</span>
-			<TimeContainer>
-				<DigitContainer>
-					<div>Days</div>
-					<div>{days < 10 ? `0${days}` : `${days}`}</div>
-				</DigitContainer>
-				<DigitContainer>
-					<div>Hours</div>
-					<div>{hours < 10 ? `0${hours}` : `${hours}`}</div>
-				</DigitContainer>
-				<DigitContainer>
-					<div>Minutes</div>
-					<div>{minutes < 10 ? `0${minutes}` : `${minutes}`}</div>
-				</DigitContainer>
-				<DigitContainer>
-					<div>Seconds</div>
-					<div>{seconds < 10 ? `0${seconds}` : `${seconds}`}</div>
-				</DigitContainer>
-			</TimeContainer>
-			<ParagraphConatiner>{details}</ParagraphConatiner>
-		</Container>
+		<div>
+			<h1>Time To Next SpaceX Launch</h1>
+			<Wrapper>
+				<DigitContainer type="Days" num={days} />
+				<DigitContainer type="Hours" num={hours} />
+				<DigitContainer type="Minutes" num={minutes} />
+				<DigitContainer type="Seconds" num={seconds} />
+			</Wrapper>
+		</div>
 	);
 };
 
