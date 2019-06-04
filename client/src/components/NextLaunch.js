@@ -9,10 +9,10 @@ const Wrapper = styled.div`
 	text-align: center;
 `;
 
-function nextLanch() {
+function nextLanch(props) {
 	return (
 		<Wrapper>
-			<Countdown />
+			<Countdown launch={props.launch} />
 		</Wrapper>
 	);
 }
