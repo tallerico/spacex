@@ -1,26 +1,25 @@
 {
-	"name": "space_app",
+	"name": "server",
 	"version": "1.0.0",
-	"description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+	"description": "server for space app",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "cd server && node server.js ",
-		"server": "cd server && node server.js",
+		"start": "node server.js ",
+		"server": "node server.js",
 		"client": "npm start --prefix client",
-		"dev": "concurrently \"cd server && nodemon server.js\" \"cd client && npm start\""
+		"dev": "concurrently \"nodemon server.js\" \"cd client && npm start\""
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/tallerico/spacex.git"
-	},
-	"author": "",
+	"author": "Mike Tallerico",
 	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/tallerico/spacex/issues"
-	},
-	"homepage": "https://github.com/tallerico/spacex#readme",
 	"dependencies": {
+		"axios": "^0.18.0",
+		"body-parser": "^1.19.0",
+		"cors": "^2.8.5",
+		"express": "^4.17.0",
+		"helmet": "^3.18.0",
+		"helmet-csp": "^2.7.1",
+		"uuidv4": "^4.0.0",
 		"concurrently": "^4.1.0"
 	}
 }
