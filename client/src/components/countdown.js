@@ -20,7 +20,6 @@ const countdown = props => {
 	const [hours, setHours] = useState('0');
 	const [minutes, setMinutes] = useState('0');
 	const [seconds, setSeconds] = useState('0');
-	const [details, setDetails] = useState(loader);
 
 	//gets difference between 2 dates using moment
 	function getDiff(currDate, targetDate) {
@@ -36,10 +35,9 @@ const countdown = props => {
 	useEffect(() => {
 		const currentDate = moment().format();
 		const fetchData = async () => {
-			const result = await axios.get('http://localhost:5000/timetolaunch');
+			const result = await axios.get('/api/timetolaunch');
 			console.log(result);
 			const launchDate = moment.utc(result.data.launch_date_local);
-			setDetails(result.data.details);
 			getDiff(currentDate, launchDate);
 			setInterval(() => {
 				const newCurrDate = moment().format();
