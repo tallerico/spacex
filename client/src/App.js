@@ -7,7 +7,9 @@ import './App.css';
 const GlobalStyles = createGlobalStyle`
   body {
     @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
-    font-family: 'Roboto Mono', monospace;
+		font-family: 'Roboto Mono', monospace;
+		background-color: #303030;
+		color: white;
 	}
 	
 	h1 {
