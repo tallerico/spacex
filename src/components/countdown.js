@@ -44,9 +44,9 @@ const countdown = props => {
 	useEffect(() => {
 		const currentDate = moment().format();
 		const fetchData = async () => {
-			const result = await axios.get('/api/timetolaunch');
+			const result = await axios.get('https://api.spacexdata.com/v3/launches/next');
 			setDetails(result.data.details);
-			console.log(result);
+
 			const launchDate = moment.utc(result.data.launch_date_local);
 			getDiff(currentDate, launchDate);
 			setInterval(() => {
