@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
-import Home from './components/Home';
+import Header from './components/header/Header';
+import CurrLaunch from './components/CurrLaunch/CurrLaunch';
 import './App.css';
 
 const GlobalStyles = createGlobalStyle`
   body {
-    @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
-		font-family: 'Roboto Mono', monospace;
-		background-color: #303030;
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300,900&display=swap');
+		font-family: 'Roboto', sans-serif;
 		color: white;
 	}
 	
@@ -27,7 +27,9 @@ function App() {
 	return (
 		<Router>
 			<GlobalStyles />
-			<Route exact path="/" component={Home} />
+			<Header />
+			<CurrLaunch />
+			{/* <Route exact path="/" component={Header} /> */}
 		</Router>
 	);
 }
