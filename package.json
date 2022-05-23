@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
-    "dexie": "^2.0.4",
+    "dexie": "^3.2.2",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.25",
     "react": "^16.8.6",
